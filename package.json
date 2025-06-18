@@ -1,0 +1,17 @@
+{
+  "name": "learn-webpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode=development"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "lodash": "^4.17.21",
+    "webpack": "4",
+    "webpack-cli": "4"
+  }
+}
