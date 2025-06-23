@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "webpack webpack.dev.config.js --mode production",
-    "dev": "webpack --mode=development"
+    "build": "webpack  --mode production",
+    "dev": "webpack  --mode=development"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +12,8 @@
   "devDependencies": {
     "lodash": "^4.17.21",
     "webpack": "4",
-    "webpack-cli": "4"
-  }
+    "webpack-cli": "4",
+    "loader-utils": "^1.2.3"
+  },
+  "dependencies": {}
 }

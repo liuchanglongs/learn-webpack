@@ -1,6 +1,6 @@
 # 编译产物
-# dist/
+dist/*
 build/
-
+dist/
 # 依赖缓存
 node_modules/

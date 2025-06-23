@@ -2,4 +2,5 @@
  * @Author: lcl
  * @Date: 2025/6/18
  */
-import "./04.处理图片的loader";
+import "./a.js";
+let a = 2;
