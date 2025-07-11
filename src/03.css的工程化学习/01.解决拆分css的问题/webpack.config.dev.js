@@ -43,12 +43,6 @@ module.exports = {
           },
           {
             loader: "css-loader",
-            options: {
-              modules: true,
-              modules: {
-                localIdentName: "[path]-[name]-[local]-[hash:5]", //配置最终的类名（一般情况是不需要弄的）
-              },
-            },
           },
         ],
       },
