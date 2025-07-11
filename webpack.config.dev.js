@@ -5,7 +5,7 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   // 默认配置
   output: {
@@ -39,7 +39,7 @@ module.exports = {
         test: /\.css$/i,
         use: [
           {
-            loader: "style-loader",
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: "css-loader",
@@ -59,6 +59,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       filename: "index.html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "css/[name].[contenthash:5].css", // 配置生成的css文件名
     }),
   ],
 };
