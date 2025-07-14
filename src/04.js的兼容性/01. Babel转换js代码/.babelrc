@@ -1,0 +1,10 @@
+// .babelrc 文件配置
+{
+    "presets": [
+         ["@babel/preset-env", {
+            "useBuiltIns": "usage",
+            "corejs": 3  // 告知使用的corejs的版本是3，之前默认使用的是2
+        }]
+    ],
+    "plugins": []
+}
