@@ -24,8 +24,13 @@
     "webpack-dev-server": "3.10.1"
   },
   "dependencies": {
+    "@babel/core": "7",
+    "@babel/preset-env": "7",
+    "babel-loader": "8",
+    "cache-loader": "4",
     "css-loader": "3.4.2",
     "jquery": "3",
+    "loadsh": "^0.0.4",
     "lodash": "^4.17.21",
     "style-loader": "1.1.3"
   }

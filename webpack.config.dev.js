@@ -6,10 +6,12 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require("webpack");
+
 module.exports = {
   // 默认配置
   output: {
-    filename: "script/[name]-[chunkhash:6]-bundle.js",
+    filename: "script/[name]-[hash:6]-bundle.js",
     path: path.resolve(__dirname, "dist"), // 必须为绝对路径
     publicPath: "/",
   },
@@ -20,6 +22,7 @@ module.exports = {
     // openPage: "html",
     open: true,
     port: 9000,
+    hot: true,
   },
 
   module: {
@@ -53,6 +56,11 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.js$/,
+        // exclude: /lodash/, // 对与lodash库不进行babel-loader处理
+        use: ["cache-loader", "babel-loader"], //转换js语法
+      },
     ],
   },
   plugins: [
@@ -64,5 +72,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "css/[name].[contenthash:5].css", // 配置生成的css文件名
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 };
