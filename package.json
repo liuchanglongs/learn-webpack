@@ -6,7 +6,8 @@
     "build": "webpack  --mode production ",
     "dev": "webpack-dev-server  --mode=development --config ./webpack.config.dev.js",
     "dev1": "webpack  --mode=development --config ./webpack.config.dev.js",
-    "test": "webpack  --env production"
+    "test": "webpack  --env production",
+    "dll": "webpack   --config ./webpack.dll.config.js"
   },
   "author": "",
   "license": "ISC",
