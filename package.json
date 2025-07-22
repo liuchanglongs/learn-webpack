@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "webpack  --mode production ",
+    "build": "webpack --config ./webpack.config.dev.js",
     "dev": "webpack-dev-server  --mode=development --config ./webpack.config.dev.js",
     "dev1": "webpack  --mode=development --config ./webpack.config.dev.js",
     "test": "webpack  --env production",
@@ -33,6 +33,7 @@
     "jquery": "3",
     "loadsh": "^0.0.4",
     "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "style-loader": "1.1.3"
   }
 }

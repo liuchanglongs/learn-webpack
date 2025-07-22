@@ -10,7 +10,6 @@ const webpack = require("webpack");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  mode: "production",
   // 默认配置
   output: {
     filename: "script/[name]-[hash:6]-bundle.js",
@@ -31,7 +30,24 @@ module.exports = {
     chunks: false,
     modules: false,
   },
-  optimization: {},
+  optimization: {
+    splitChunks: {
+      //分包配置
+      chunks: "all",
+      // maxSize: 60,
+      //    automaticNameDelimiter: ".",
+      //    minChunks: 2,
+      //  minSize: 30000   // 达到30kb才要分包
+      // 自定义缓存组
+      cacheGroups: {
+        styles: {
+          test: /\.css$/, // 匹配样式模块
+          minSize: 100, // 默认的最小尺寸，
+          minChunks: 1, // 覆盖默认的最小chunk引用数
+        },
+      },
+    },
+  },
   module: {
     rules: [
       {
@@ -64,7 +80,7 @@ module.exports = {
     ],
   },
   plugins: [
-    // new CopyPlugin([{ from: "./public", to: "./" }]),
+    new CopyPlugin([{ from: "./public", to: "./" }]),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       filename: "index.html",
